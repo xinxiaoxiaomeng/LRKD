@@ -1,3 +1,8 @@
+
+
+
+
+
 # coding=utf-8
 import torch
 import torch.nn as nn
@@ -129,7 +134,7 @@ def train_cls(args):
     if args.distiller == 'kd':
         criterion_kd = None
     elif args.distiller == 'lrkd':
-        criterion_kd = LRKDLosss(args.temperature)
+        criterion_kd = LRKDLoss(args.temperature)
     else:
         raise NotImplemented(args.distiller)
 
@@ -225,6 +230,8 @@ def train_cls(args):
 
 if __name__ == '__main__':
     main()
+
+
 
 
 
